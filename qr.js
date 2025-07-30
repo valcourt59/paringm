@@ -1,6 +1,7 @@
 const { exec } = require("child_process");
 const { upload } = require('./mega');
 const express = require('express');
+const { makeInMemoryStore } = require("@whiskeysockets/baileys");
 let router = express.Router()
 const pino = require("pino");
 
@@ -13,20 +14,21 @@ const fs = require("fs-extra");
 const { Boom } = require("@hapi/boom");
 
 const MESSAGE = process.env.MESSAGE ||  `
-qrcode
+
+┃━━━━━━━━━━━━━━━
 ┃DRINX-MD IS 
 ┃SUCCESSFULLY
 ┃CONNECTED ✅🔥
 ┗━━━━━━━━━━━━━━━
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-❶ || Creator = 𖥘Alix 𖥘
+❶ || Creator = 𖥘•!¡゜𝙼̷𝚛̷_𝚍̷𝚛̷𝚒̷𝚗̷𝚡̷.___𖥘
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 ❷ || WhattsApp Channel = https://whatsapp.com/channel/0029VbBEGYMGJP8NpOJ6eS2A
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Please Follow My Support Channel
 Wanna talk to me?👉 https://t.me/DRINX_MD👈
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-©*2024-2099 Alix ESCA*
+©*2024-2099 •!¡゜𝙼̷𝚛̷_𝚍̷𝚛̷𝚒̷𝚗̷𝚡̷.___🧃🇭🇹*
 
 _Don't Forget To Give Star To My Repo_`
 
